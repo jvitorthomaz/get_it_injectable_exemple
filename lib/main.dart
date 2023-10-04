@@ -82,14 +82,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          
-          children: <Widget>[
-            Text('$id', style: TextStyle(fontSize: 28,)),
-            Text('Message: $name', style: const TextStyle(fontSize: 20,)),
-          ],
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.99,
+          height: 200,
+          decoration: BoxDecoration(
+            //color: Colors.deepPurple,
+            border: Border.all(width: 2, color: Colors.black),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+         
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            
+            children: <Widget>[
+              Text('$id', style: TextStyle(fontSize: 28, color: Colors.black)),
+              Divider(thickness: 2, color: Colors.black,),
+              Text('Message: $name', style: const TextStyle(fontSize: 20, color: Colors.black)),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
